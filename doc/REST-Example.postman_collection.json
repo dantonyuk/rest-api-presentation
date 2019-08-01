@@ -1,0 +1,551 @@
+{
+	"info": {
+		"_postman_id": "2cd5125b-f853-4eb0-9d66-ea6e3b6cf821",
+		"name": "REST Example",
+		"description": "Used for REST API demonstration",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get API",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{hostname}}/{{api-path}}",
+					"protocol": "http",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"{{api-path}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get profiles",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{hostname}}/{{api-path}}/profile",
+					"protocol": "http",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"{{api-path}}",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Options for Users",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "OPTIONS",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"dantonyuk\",\n    \"email\": \"dantonyuk@hylamobile.com\",\n    \"password\": \"test\"\n}"
+				},
+				"url": {
+					"raw": "http://{{hostname}}/{{api-path}}/users",
+					"protocol": "http",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"{{api-path}}",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{hostname}}/{{api-path}}/users",
+					"protocol": "http",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"{{api-path}}",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get a user",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "If-None-Match",
+						"value": "\"2\"",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://{{hostname}}/{{api-path}}/users/1",
+					"protocol": "http",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"{{api-path}}",
+						"users",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create a user",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"dantonyuk\",\n    \"email\": \"dantonyuk@hylamobile.com\",\n    \"password\": \"test\"\n}"
+				},
+				"url": {
+					"raw": "http://{{hostname}}/{{api-path}}/users",
+					"protocol": "http",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"{{api-path}}",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update a user",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"dantonyuk\",\n    \"email\": \"dantonyuk@hylamobile.com\"\n}"
+				},
+				"url": {
+					"raw": "http://{{hostname}}/{{api-path}}/users/1",
+					"protocol": "http",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"{{api-path}}",
+						"users",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a user",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://{{hostname}}/{{api-path}}/users/4",
+					"protocol": "http",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"{{api-path}}",
+						"users",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get polls",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{hostname}}/{{api-path}}/polls?",
+					"protocol": "http",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"{{api-path}}",
+						"polls"
+					],
+					"query": [
+						{
+							"key": "projection",
+							"value": "nooptions",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get a poll",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{hostname}}/{{api-path}}/polls/2?",
+					"protocol": "http",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"{{api-path}}",
+						"polls",
+						"2"
+					],
+					"query": [
+						{
+							"key": "projection",
+							"value": "nooptions",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create a poll",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"description\": \"Choose Your API\",\n    \"options\": [{\n    \t\"text\": \"HTTP\"\n    }, {\n    \t\"text\": \"RPC\"\n    }, {\n    \t\"text\": \"REST\"\n    }]\n}"
+				},
+				"url": {
+					"raw": "http://{{hostname}}/{{api-path}}/polls",
+					"protocol": "http",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"{{api-path}}",
+						"polls"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update a poll",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"description\": \"Choose Your Killing API\",\n    \"options\": [{\n    \t\"text\": \"HTTP\"\n    }, {\n    \t\"text\": \"RPC\"\n    }, {\n    \t\"text\": \"REST\"\n    }]\n}"
+				},
+				"url": {
+					"raw": "http://{{hostname}}/{{api-path}}/polls/2",
+					"protocol": "http",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"{{api-path}}",
+						"polls",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a poll",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://{{hostname}}/{{api-path}}/polls/6",
+					"protocol": "http",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"{{api-path}}",
+						"polls",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get poll options",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{hostname}}/{{api-path}}/polls/2/options",
+					"protocol": "http",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"{{api-path}}",
+						"polls",
+						"2",
+						"options"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get votes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{hostname}}/{{api-path}}/votes?",
+					"protocol": "http",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"{{api-path}}",
+						"votes"
+					],
+					"query": [
+						{
+							"key": "projection",
+							"value": "nooptions",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get a vote",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{hostname}}/{{api-path}}/polls/2?",
+					"protocol": "http",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"{{api-path}}",
+						"polls",
+						"2"
+					],
+					"query": [
+						{
+							"key": "projection",
+							"value": "nooptions",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create a vote",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"user\": \"http://localhost:8080/api/users/1\",\n\t\"poll\": \"http://localhost:8080/api/polls/2\",\n\t\"option\": {\n\t\t\"id\": 3,\n\t\t\"text\": \"HTTP\"\n\t} \n}"
+				},
+				"url": {
+					"raw": "http://{{hostname}}/{{api-path}}/votes",
+					"protocol": "http",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"{{api-path}}",
+						"votes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update a vote",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"description\": \"Choose Your Killing API\"\n}"
+				},
+				"url": {
+					"raw": "http://{{hostname}}/{{api-path}}/polls/6",
+					"protocol": "http",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"{{api-path}}",
+						"polls",
+						"6"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "test",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "dantonyuk",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "b7d9a278-2c23-4453-97a7-247943a1a0b2",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "3c2b813b-a5c5-46c8-a35b-ae5b3ae5e3af",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "e0b00420-0436-4f7a-a373-9d2f086d8ab7",
+			"key": "hostname",
+			"value": "localhost:8080",
+			"type": "string"
+		},
+		{
+			"id": "3b2be46b-bfef-4870-8c32-073e0d1a94e2",
+			"key": "api-path",
+			"value": "api",
+			"type": "string"
+		}
+	]
+}
